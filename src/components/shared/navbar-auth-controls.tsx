@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Bookmark, ChevronDown, LayoutGrid, LogOut, Plus, Settings, User, FileText, Building2, Tag, Image as ImageIcon } from 'lucide-react'
+import { ChevronDown, LayoutGrid, LogOut, Plus, User, FileText, Building2, Tag, Image as ImageIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -44,7 +44,7 @@ export function NavbarAuthControls() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-56 border-[rgba(110,26,55,0.12)] bg-[rgba(255,250,244,0.98)]">
-          {SITE_CONFIG.tasks.filter((task) => task.enabled).map((task) => {
+          {SITE_CONFIG.tasks.filter((task) => task.enabled && task.key !== 'classified').map((task) => {
             const Icon = taskIcons[task.key] || LayoutGrid
             return (
               <DropdownMenuItem key={task.key} asChild>
@@ -78,19 +78,6 @@ export function NavbarAuthControls() {
               <span className="text-xs text-[#7f646b]">{user?.email}</span>
             </div>
           </div>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem asChild>
-            <Link href="/dashboard/saved">
-              <Bookmark className="mr-2 h-4 w-4" />
-              Saved Items
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/settings">
-              <Settings className="mr-2 h-4 w-4" />
-              Settings
-            </Link>
-          </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={logout} className="text-destructive">
             <LogOut className="mr-2 h-4 w-4" />

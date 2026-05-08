@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Bookmark, Building2, FileText, Image as ImageIcon, Sparkles } from 'lucide-react'
@@ -21,8 +21,8 @@ function getLoginConfig(kind: ReturnType<typeof getProductKind>) {
     muted: 'text-neutral-600',
     action: 'bg-[#cf0f47] text-white hover:bg-[#a30c39]',
     icon: Building2,
-    title: 'Access your business dashboard',
-    body: 'Manage listings, verification details, contact info, and local discovery surfaces from one place.',
+    title: 'Welcome Back',
+    body: 'Sign in to explore business listings, view saved favorites, and manage your directory profile.',
   }
 }
 
@@ -60,7 +60,7 @@ export default function LoginPage() {
         title: 'Welcome back!',
         description: 'You have been signed in successfully.',
       })
-      router.push('/')
+      router.push('/dashboard')
     } catch (error) {
       toast({
         title: 'Error',
@@ -72,10 +72,11 @@ export default function LoginPage() {
     }
   }
 
-  if (isAuthenticated) {
-    router.push('/')
-    return null
-  }
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push('/dashboard')
+    }
+  }, [isAuthenticated, router])
 
   return (
     <div className={`min-h-screen ${config.shell}`}>
@@ -87,7 +88,7 @@ export default function LoginPage() {
             <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em]">{config.title}</h1>
             <p className={`mt-5 text-sm leading-8 ${config.muted}`}>{config.body}</p>
             <div className="mt-8 grid gap-4">
-              {['Cleaner product-specific workflows', 'Palette and layout matched to the site family', 'Fewer repeated admin patterns'].map((item) => (
+              {['Access your saved listings', 'Quick business search and filters', 'Manage your directory profile'].map((item) => (
                 <div key={item} className="rounded-[1.5rem] border border-current/10 px-4 py-4 text-sm">{item}</div>
               ))}
             </div>
