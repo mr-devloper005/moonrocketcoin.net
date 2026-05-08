@@ -15,8 +15,8 @@ function getRegisterConfig(kind: ReturnType<typeof getProductKind>) {
       muted: 'text-slate-600',
       action: 'bg-slate-950 text-white hover:bg-slate-800',
       icon: Building2,
-      title: 'Create a business-ready account',
-      body: 'List services, manage locations, and activate trust signals with a proper directory workflow.',
+      title: 'Join the Directory',
+      body: 'Create your free account to explore business listings, save favorites, and connect with local services.',
     }
   }
   if (kind === 'editorial') {
@@ -75,7 +75,7 @@ export default function RegisterPage() {
             <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em]">{config.title}</h1>
             <p className={`mt-5 text-sm leading-8 ${config.muted}`}>{config.body}</p>
             <div className="mt-8 grid gap-4">
-              {['Different onboarding per product family', 'No repeated one-size-fits-all shell', 'Profile, publishing, and discovery aligned'].map((item) => (
+              {['Discover verified local businesses', 'Save and compare listings', 'Connect directly with service providers'].map((item) => (
                 <div key={item} className="rounded-[1.5rem] border border-current/10 px-4 py-4 text-sm">{item}</div>
               ))}
             </div>
@@ -87,7 +87,7 @@ export default function RegisterPage() {
               <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Full name" />
               <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Email address" />
               <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Password" type="password" />
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="What are you creating or publishing?" />
+              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Business or interest (optional)" />
               <button type="submit" className={`inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold ${config.action}`}>Create account</button>
             </form>
             <div className={`mt-6 flex items-center justify-between text-sm ${config.muted}`}>

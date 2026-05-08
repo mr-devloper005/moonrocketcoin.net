@@ -33,7 +33,9 @@ type Field = {
   required?: boolean;
 };
 
-const FORM_CONFIG: Record<TaskKey, { title: string; description: string; fields: Field[] }> = {
+const FORM_CONFIG: Record<Exclude<TaskKey, 'classified'>, { title: string; description: string; fields: Field[] }> & {
+  classified?: { title: string; description: string; fields: Field[] };
+} = {
   listing: {
     title: "Create Business Listing",
     description: "Add a local-only listing with business details.",
@@ -49,23 +51,6 @@ const FORM_CONFIG: Record<TaskKey, { title: string; description: string; fields:
       { key: "phone", label: "Phone", type: "text" },
       { key: "logo", label: "Logo URL", type: "url" },
       { key: "images", label: "Gallery images", type: "images" },
-      { key: "highlights", label: "Highlights", type: "highlights" },
-    ],
-  },
-  classified: {
-    title: "Create Classified",
-    description: "Add a local-only classified ad.",
-    fields: [
-      { key: "title", label: "Ad title", type: "text", required: true },
-      { key: "summary", label: "Short summary", type: "textarea", required: true },
-      { key: "description", label: "Ad details", type: "textarea", required: true },
-      { key: "category", label: "Category", type: "category", required: true },
-      { key: "location", label: "Location", type: "text" },
-      { key: "address", label: "Address", type: "text" },
-      { key: "website", label: "Website URL", type: "url" },
-      { key: "email", label: "Business email", type: "text" },
-      { key: "phone", label: "Phone", type: "text" },
-      { key: "images", label: "Images", type: "images" },
       { key: "highlights", label: "Highlights", type: "highlights" },
     ],
   },

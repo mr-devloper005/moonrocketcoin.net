@@ -27,14 +27,9 @@ const footerLinks = {
   company: [
     { name: 'About', href: '/about' },
     { name: 'Careers', href: '/careers' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Press', href: '/press' },
   ],
   resources: [
     { name: 'Help Center', href: '/help' },
-    { name: 'Community', href: '/community' },
-    { name: 'Developers', href: '/developers' },
-    { name: 'Status', href: '/status' },
   ],
   legal: [
     { name: 'Privacy', href: '/privacy' },
@@ -46,7 +41,6 @@ const footerLinks = {
 
 const socialLinks = [
   { name: 'Contact', href: '/contact', icon: Mail },
-  { name: 'Status', href: '/status', icon: Sparkles },
 ]
 
 export function Footer() {
