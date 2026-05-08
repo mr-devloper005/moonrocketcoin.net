@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { mockTeamMembers } from "@/data/mock-data";
 import { SITE_CONFIG } from "@/lib/site-config";
-import { Building2, Compass, ShieldCheck, Sparkles, Target } from "lucide-react";
+import { Building2, ShieldCheck, Sparkles, Target } from "lucide-react";
 
 const milestones = [
   { year: "2024", title: "Directory foundation", body: "Launched a listing-first surface built for fast verification and clean metadata." },
@@ -41,44 +41,12 @@ export default function AboutPage() {
       title={`The story behind ${SITE_CONFIG.name}`}
       description="We are a listing-first business discovery platform. Our goal is simple: help people find credible businesses, compare signals, and reach out with confidence."
       actions={
-        <>
-          <Link href="/team" className={btn.outline}>
-            Meet the team
-          </Link>
-          <Link href="/contact" className={btn.primary}>
-            Contact us
-          </Link>
-        </>
+        <Link href="/contact" className={btn.primary}>
+          Contact us
+        </Link>
       }
     >
-      <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-        <div className="rounded-3xl border border-black/10 bg-white p-8 shadow-[0_22px_56px_rgba(0,0,0,0.06)] sm:p-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-[#fff5f5] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
-            <Compass className="h-3.5 w-3.5 text-[#cf0f47]" />
-            Mission
-          </div>
-          <h2 className="mt-5 text-3xl font-semibold tracking-[-0.04em] text-neutral-950">Directory craft, not generic feeds.</h2>
-          <p className="mt-4 text-sm leading-7 text-neutral-600">
-            {SITE_CONFIG.name} exists because business discovery should feel intentional. We bias toward structured entries, readable
-            categories, and surfaces that respect the reader&apos;s time—whether they are researching vendors, venues, or local services.
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-black/8 bg-[#fffafa] p-5 text-center">
-              <div className="text-3xl font-semibold text-[#cf0f47]">12k+</div>
-              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-neutral-500">Signals indexed</div>
-            </div>
-            <div className="rounded-2xl border border-black/8 bg-[#fffafa] p-5 text-center">
-              <div className="text-3xl font-semibold text-[#cf0f47]">180k</div>
-              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-neutral-500">Searches routed</div>
-            </div>
-            <div className="rounded-2xl border border-black/8 bg-[#fffafa] p-5 text-center">
-              <div className="text-3xl font-semibold text-[#cf0f47]">8.6k</div>
-              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-neutral-500">Listings published</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-4">
+      <div className="space-y-4">
           {pillars.map(({ icon: Icon, title, body }) => (
             <div key={title} className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_18px_48px_rgba(0,0,0,0.05)]">
               <div className="flex items-start gap-4">
@@ -93,7 +61,6 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </div>
 
       <div className="mt-14">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
@@ -101,9 +68,6 @@ export default function AboutPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-neutral-500">Timeline</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-[-0.04em] text-neutral-950">How we got here</h2>
           </div>
-          <Link href="/press" className="text-sm font-semibold text-[#cf0f47] hover:underline">
-            Press &amp; media
-          </Link>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
           {milestones.map((m) => (

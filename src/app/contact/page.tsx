@@ -58,19 +58,9 @@ export default function ContactPage() {
       <main className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] opacity-70">Contact {SITE_CONFIG.name}</p>
-            <h1 className="mt-4 text-5xl font-semibold tracking-[-0.05em]">Contact Moon Rocket Coin</h1>
-            <p className={`mt-5 max-w-2xl text-sm leading-8 ${tone.muted}`}>Tell us what you are trying to publish, fix, or launch. We will route it through the right lane instead of forcing every request into the same support bucket.</p>
-            
-            {/* Email Button */}
-            <div className="mt-6">
-              <Button asChild className={`${tone.action}`}>
-                <a href={`mailto:${siteIdentity.contactEmail}`}>
-                  <Mail className="mr-2 h-4 w-4" />
-                  Email us at {siteIdentity.contactEmail}
-                </a>
-              </Button>
-            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] opacity-70">Get in touch</p>
+            <h1 className="mt-4 text-5xl font-semibold tracking-[-0.05em]">Contact Us</h1>
+            <p className={`mt-5 max-w-2xl text-sm leading-8 ${tone.muted}`}>Have questions or need support? Reach out and we'll help you get started.</p>
             
             <div className="mt-8 space-y-4">
               {lanes.map((lane) => (
@@ -87,7 +77,6 @@ export default function ContactPage() {
             <h2 className="text-2xl font-semibold">Send a message</h2>
             <form className="mt-6 grid gap-4">
               <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Your name" />
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Email address" />
               <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="What do you need help with?" />
               <textarea className="min-h-[180px] rounded-2xl border border-current/10 bg-transparent px-4 py-3 text-sm" placeholder="Share the full context so we can respond with the right next step." />
               <button type="submit" className={`inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold ${tone.action}`}>Send message</button>

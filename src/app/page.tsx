@@ -148,16 +148,7 @@ function DirectoryHome({ primaryTask, enabledTasks, listingPosts, classifiedPost
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div className={`rounded-3xl border border-black/10 bg-white p-7 shadow-[0_22px_56px_rgba(0,0,0,0.07)] sm:p-9`}>
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-white">
-                  <Compass className="h-3.5 w-3.5" />
-                  Moon Rocket Coin Directory
-                </span>
-                <span className="inline-flex items-center rounded-full border border-black/10 bg-[#fff5f5] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-700">
-                  Listing-first
-                </span>
-              </div>
-
+              
               <h1 className="mt-6 text-5xl font-semibold tracking-[-0.06em] text-neutral-950 sm:text-6xl">
                 Find the business. Verify the details. Contact fast.
               </h1>

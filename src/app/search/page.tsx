@@ -75,7 +75,7 @@ export default async function SearchPage({
       <NavbarShell />
       <main>
         <section className={`${ui.hero}`}>
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_420px] lg:px-8 lg:py-14">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_320px] lg:px-8 lg:py-14">
             <div>
               <div className={`inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] ${ui.eyebrow}`}>
                 <Search className="h-4 w-4" />
@@ -109,22 +109,7 @@ export default async function SearchPage({
           </div>
         </section>
 
-        <section className={`mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:px-8 ${ui.searchLayout}`}>
-          <aside className={`h-fit p-5 lg:sticky lg:top-24 ${ui.softPanel}`}>
-            <div className={`flex items-center gap-2 text-sm font-semibold ${ui.title}`}>
-              <Filter className="h-4 w-4" />
-              Result controls
-            </div>
-            <div className="mt-5 grid gap-3 text-sm">
-              <div className={`flex items-center justify-between px-3 py-2 ${ui.chip}`}>
-                <span>Total results</span>
-                <strong>{results.length}</strong>
-              </div>
-              <div className={`px-3 py-2 ${ui.chip}`}>{category || 'All categories'}</div>
-              <div className={`px-3 py-2 ${ui.chip}`}>{task || 'All content types'}</div>
-            </div>
-          </aside>
-
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div>
             {results.length ? (
               <div className={ui.listGrid}>
