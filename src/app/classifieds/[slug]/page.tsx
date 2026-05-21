@@ -2,6 +2,9 @@ import { redirect } from "next/navigation";
 import { buildPostMetadata, buildTaskMetadata } from "@/lib/seo";
 import { fetchTaskPostBySlug, fetchTaskPosts } from "@/lib/task-data";
 
+
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 export const revalidate = 3;
 
 export async function generateStaticParams() {
