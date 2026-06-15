@@ -288,9 +288,6 @@ export async function TaskDetailPage({ task, slug }: { task: TaskKey; slug: stri
                     ))}
                   </div>
                 ) : null}
-                {articleSummary ? (
-                  <p className="text-base leading-7 text-muted-foreground">{articleSummary}</p>
-                ) : null}
 
                 {(content.website || content.phone || content.email || location) ? (
                   <div className="rounded-xl border-2 border-primary/25 bg-secondary/50 p-5 shadow-sm">
